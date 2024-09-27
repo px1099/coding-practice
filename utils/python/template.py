@@ -5,5 +5,6 @@ def solve():
 if __name__ == "__main__":
     tc = 1
     # tc = int(input())
-    for _ in range(tc):
+    for t in range(tc):
+        # print(f"Case #{t}: ", end=None)
         solve()

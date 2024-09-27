@@ -11,7 +11,7 @@ func main() {
 	tc := 1
 	// fmt.Scan(&tc)
 	for t := 1; t <= tc; t++ {
-		// fmt.Print("Case ", t, ": ")
+		// fmt.Printf("Case #%d: ", t)
 		solve()
 	}
 }
