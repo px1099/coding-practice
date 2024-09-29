@@ -32,11 +32,14 @@ def test_min_pq():
     pq = PriorityQueue()
     pq.push(priority=2, item="b")
     pq.push(priority=3, item="a")
+    pq.push(priority=2, item="bb")
     pq.push(priority=1, item="c")
     pq_item = pq.pop()
     assert pq_item.priority == 1 and pq_item.item == "c"
     pq_item = pq.pop()
     assert pq_item.priority == 2 and pq_item.item == "b"
+    pq_item = pq.pop()
+    assert pq_item.priority == 2 and pq_item.item == "bb"
     pq_item = pq.pop()
     assert pq_item.priority == 3 and pq_item.item == "a"
     with pytest.raises(IndexError):
@@ -46,11 +49,14 @@ def test_max_pq():
     pq = PriorityQueue(max_queue=True)
     pq.push(priority=2, item="b")
     pq.push(priority=3, item="a")
+    pq.push(priority=2, item="bb")
     pq.push(priority=1, item="c")
     pq_item = pq.pop()
     assert pq_item.priority == 3 and pq_item.item == "a"
     pq_item = pq.pop()
     assert pq_item.priority == 2 and pq_item.item == "b"
+    pq_item = pq.pop()
+    assert pq_item.priority == 2 and pq_item.item == "bb"
     pq_item = pq.pop()
     assert pq_item.priority == 1 and pq_item.item == "c"
     with pytest.raises(IndexError):
